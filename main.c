@@ -245,6 +245,7 @@ turno = 1;
 //en la proxima linea comparo las diferentes combinaciones que se deben dar para que alguien gane, tambien verifico que en las lineas no haya ningun vacio
     if(a==b && b==c && arr[2]!=0  || d==e && e==f && arr[5]!=0 || g==h && h==l && arr[8]!=0 || a==d && d==g && arr[4]!=0 || b==e && e==h && arr[5]!=0 || c==f && f==l && arr[6]!=0 || a==e && e==l && arr[5]!=0 || c==e && e==g && arr[5]!=0)
    {
+   	// si entro al if significa que hay un ganador; a i le doy valor 9 para salir del for y qe deje de iterar
     i=9;
     ganador=1;
     partida++;
@@ -264,15 +265,14 @@ if (ganador == 0){
     partida++;
 }
 
-printf("si desea jugar una nueva partida pulse 1 \n\n");
-nue=getch();
 //con la siguiente funcion defino quien arranca la siguiente partida
 if (partida %2 == 0)
     turno=1;
 else
     turno=0;
 
-
+printf("si desea jugar una nueva partida pulse 1 \n\n");
+nue=getch();
 
 }while (nue=='1');
 printf("pulse cualquier tecla para salir");

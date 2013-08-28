@@ -43,7 +43,7 @@ printf("%s sera las X y %s los O", jug1, jug2);
 
 
 
-
+// armo una tabla donde dejo el sistema de coordenadas y otra con el resultado parcial del partido
 getch();
 system("cls");
 printf("\n\n");
@@ -68,7 +68,7 @@ printf("|_____|_____|_____|     |_____|_____|_____|       \n");
 
 for( i = 0; i < 9; i++) {
 cont=cont + 1;
-
+// con el if te toca jugar al primer jugador y con el else le toca al segundo
 if (turno==1) {
 
 //leo la jugada y asigno 'x' o '0' para que no vuelva a tomar esa posicion

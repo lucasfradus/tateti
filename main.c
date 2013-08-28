@@ -2,20 +2,9 @@
 #include <stdlib.h>
  main(){
     char jug1[15], jug2[15], seguir ='1';
-    int i, j, n, turno=1, arr[10], cont, ganador;
-    char a, b, c, d, e, f, g, h, l;
-a=' ';
-b=' ';
-c=' ';
-d=' ';
-e=' ';
-f=' ';
-g=' ';
-h=' ';
-l=' ';
-cont=0;
-ganador=0;
-//modulo para cargar nombres de jugadores, con validacion.
+    int i, j, n, turno=1, arr[10], cont, ganador, partida;
+    char a, b, c, d, e, f, g, h, l, nue;
+
 
 do {
     printf("introduzca el nombre del jugador 1:\n\n");
@@ -42,8 +31,19 @@ system("cls");
 printf("%s sera las X y %s los O", jug1, jug2);
 
 
+do{
+a=' ';
+b=' ';
+c=' ';
+d=' ';
+e=' ';
+f=' ';
+g=' ';
+h=' ';
+l=' ';
 
-// armo una tabla donde dejo el sistema de coordenadas y otra con el resultado parcial del partido
+cont=0;
+ganador=0;
 getch();
 system("cls");
 printf("\n\n");
@@ -59,7 +59,7 @@ printf("|  7  |  8  |  9  |     |  %c  |  %c  |  %c  |    \n", g, h, l);
 printf("|_____|_____|_____|     |_____|_____|_____|       \n");
 
 
-//inicializo un arreglo en 0, esto lo voy a ir llenando con X y O, y despues lo voy a utilizar para verificar el ganador
+//carga de arreglo para validacion
  for (i=1; i<10; i++){
     arr[i]=0;
  }
@@ -68,7 +68,7 @@ printf("|_____|_____|_____|     |_____|_____|_____|       \n");
 
 for( i = 0; i < 9; i++) {
 cont=cont + 1;
-// con el if te toca jugar al primer jugador y con el else le toca al segundo
+
 if (turno==1) {
 
 //leo la jugada y asigno 'x' o '0' para que no vuelva a tomar esa posicion
@@ -246,21 +246,35 @@ turno = 1;
    {
     i=9;
     ganador=1;
+    partida++;
      if (turno  == 1)
-        printf("\n\nel ganador es %s!!!", jug2);
+        printf("\n\nel ganador es %s!!!\n\n", jug2);
 
     else
-     printf("\n\nel ganador es %s!!!", jug1);
+     printf("\n\nel ganador es %s!!!\n\n", jug1);
 
    }
 
 
 
 }
-if (ganador == 0)
-    printf("\nNo hay ganadores");
+if (ganador == 0){
+    printf("\nNo hay ganadores\n\n");
+    partida++;
+}
+
+printf("si desea jugar una nueva partida pulse 1 \n\n");
+nue=getch();
+//con la siguiente funcion defino quien arranca la siguiente partida
+if (partida %2 == 0)
+    turno=1;
+else
+    turno=0;
+
+
+
+}while (nue=='1');
+printf("pulse cualquier tecla para salir");
+
 getch();
-
-
-
  }

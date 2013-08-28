@@ -5,7 +5,7 @@
     int i, j, n, turno=1, arr[10], cont, ganador, partida;
     char a, b, c, d, e, f, g, h, l, nue;
 
-
+//para cargar nombre
 do {
     printf("introduzca el nombre del jugador 1:\n\n");
 scanf( "%s", &jug1);
@@ -25,13 +25,14 @@ seguir=getch();
 seguir=tolower(seguir);
 } while (seguir =='1');
 system("cls");
-//para cargar nombre
+
 
 
 printf("%s sera las X y %s los O", jug1, jug2);
 
 
 do{
+	//inicializo las variables en ' ' (vacio) para poder imprimirlas por pantalla sin que hagan ruido
 a=' ';
 b=' ';
 c=' ';
@@ -59,7 +60,7 @@ printf("|  7  |  8  |  9  |     |  %c  |  %c  |  %c  |    \n", g, h, l);
 printf("|_____|_____|_____|     |_____|_____|_____|       \n");
 
 
-//carga de arreglo para validacion
+//cargo el arreglo en 0 para despues poder ir cargandole los datos y poder validarlo cuando alguien gana.
  for (i=1; i<10; i++){
     arr[i]=0;
  }

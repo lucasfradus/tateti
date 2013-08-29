@@ -249,6 +249,8 @@ turno = 1;
     i=9;
     ganador=1;
     partida++;
+    
+    // para saber quien es el ganador me fijo quien fue el ultimo en jugar, verifico la variable turno.
      if (turno  == 1)
         printf("\n\nel ganador es %s!!!\n\n", jug2);
 
